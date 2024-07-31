@@ -35,17 +35,24 @@
         padding: 14px 16px;
         text-decoration: none;
     }
+    footer{
+
+       margin-bottom: 0px;
+    }
     
     </style>
 </head>
 <body>
-    <footer>
-   <ul>
-       <li><a href="index.php">Accueil</a></li>
-       <li><a href="livre.php">Livres</a></li>
-       <li><a href="livres.php">bibliotheque</a></li>
-   </ul>
 
-    </footer>
+  <main>
+     <footer>
+        <ul>
+           <li><a href="index.php">Accueil</a></li>
+           <li><a href="livre.php">Livres</a></li>
+           <li><a href="livres.php">bibliotheque</a></li>
+        </ul>
+    
+       </footer>
+ </main>
 </body>
 </html>

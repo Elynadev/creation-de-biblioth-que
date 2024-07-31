@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
     <style>
 
 form{
@@ -56,7 +58,7 @@ require_once('gestion.php');
  include ('header.php');
 
 echo '<h1> Quel livre voulez-vous ajouter ?</h1>
-
+  <section class="formulaire">
     <form action="livre.php" method="post">
         <label for="titre">Titre du livre:</label>
         <input type="text" id="titre" name="titre" required>
@@ -67,9 +69,11 @@ echo '<h1> Quel livre voulez-vous ajouter ?</h1>
         <label for="annee">Année de publication:</label>
         <input type="number" id="annee" name="annee" required>
 
-        <button type="submit" name="ajouter">Ajouter</button>
+        <button type="submit" name="ajouter" class="btn btn-secondary">Ajouter</button>
+
         <br><br>
     </form>
+      </section>
     ';
 
 
@@ -95,7 +99,7 @@ echo '<h1> Quel livre voulez-vous ajouter ?</h1>
 
        
 
-        
+        //afficher les livres
 
         echo " <h1>liste des livres</h1>";
         $livre = new livre();
@@ -122,9 +126,15 @@ echo '<h1> Quel livre voulez-vous ajouter ?</h1>
           <td> $array[auteur] </td>
           <td> $array[anné]  </td>
           <td>
-                <button >Modifier</button>
-                 <button>Supprimer</button>
-           </td>
+                <form action='modification.php' method='post'> 
+                  <button type='submit' class='btn btn-secondary' data-bs-dismiss='modal'>Modifier</button> 
+                   </form>
+                <form action='livre.php' method='post'> 
+                    <button type='submit' name='delete' value='$array[id]' class='btn btn-danger'>supprimer</button>  
+                   </form>
+          
+                  </td>
+
         </tr>
       </tbody>
       </table>";
@@ -134,8 +144,39 @@ echo '<h1> Quel livre voulez-vous ajouter ?</h1>
     
 
 
+//suppression
+
+  
+    if (isset($_POST['delete']) ) {
+     
+      echo "<script>alert ('lancement de   la suppression')</script>";
+      $livre = new livre();
+     $sup=$livre->delete([$_POST['delete']]);
+  }
+
+
+
+//modifier
+
+if (isset($_POST['modifier']) ){
+
+{
+  echo "<script>alert ('lancement')</script>";
+ 
+
+  $livre=new livre($titre,$auteur,$annee);
+  $p=$livre->update($titre,$auteur,$annee);
+		
+
+
+}
+}
+
 
 
 ?>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+   
 </body>
 </html>

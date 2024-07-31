@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
     <style>
     table {
   border-collapse: collapse;
@@ -34,9 +36,6 @@ require_once('gestion.php');
 
 
 
-
-   
-
         $livre = new livre();
         
         $bibliotheque=$livre->afficherLivre();
@@ -63,9 +62,7 @@ require_once('gestion.php');
           <td>$array[titre] </td> 
           <td> $array[auteur] </td>
           <td> $array[anné]  </td>
-          <td>
-                <button >Modifier</button>
-                 <button>Supprimer</button>
+          <td> <button type='submit' name='delete' value='$array[id]' class='btn btn-danger'>Déjà lu..</button>  
            </td>
         </tr>
       </tbody>

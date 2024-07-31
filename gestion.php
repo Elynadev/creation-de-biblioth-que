@@ -22,9 +22,9 @@ public function afficherLivre() {
     return $this->getAllData($sql);
     }
 
- public function update($titre,$auteur,$annee, $id) {
+ public function update($titre,$auteur,$annee) {
     $sql = "UPDATE livres SET titre = ?, auteur = ?, anné = ? WHERE id = ?";
-    $data = [$titre,$auteur,$annee, $id];
+    $data = [$titre,$auteur,$annee];
     $this->sendData($sql,$data);
  }
 
