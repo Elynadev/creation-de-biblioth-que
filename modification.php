@@ -34,6 +34,9 @@ form{
         border-radius: 5px;
         font-size: 1.2em;
     }
+    h1{
+        text-align:center;
+    }
 <body>
  </style>   
 <?php
@@ -41,21 +44,19 @@ require_once('gestion.php');
  include ('header.php');
 
 
- echo"bonjour";
-
  echo '<h1> Modifiez le livre ici..</h1>
   <section class="formulaire">
     <form action="livre.php" method="post">
         <label for="titre">Titre du livre:</label>
-        <input type="text" id="titre" name="titre" placehorder="" required>
+        <input type="text" id="titre" name="titre" value=" {{$array[titre]}} " required>
 
         <label for="auteur">Auteur:</label>
-        <input type="text" id="auteur" name="auteur" required>
+        <input type="text" id="auteur" name="auteur" placeholder=" $array[titre]" required>
 
         <label for="annee">Année de publication:</label>
-        <input type="number" id="annee" name="annee" required>
+        <input type="number" id="annee" name="annee"placeholder=" $array[titre]" required>
 
-        <button type="submit" name="modifier" class="btn btn-secondary">Ajouter</button>
+        <button type="submit" name="modifier" class="btn btn-secondary">modifier</button>
 
         <br><br>
     </form>

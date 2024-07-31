@@ -14,7 +14,7 @@
 include ('header.php');
 
 echo '<h1>Bienvenue au rayon des livres</h1>
-      <p> Faites le mpoint de vos livres lus ou posséder...<p>
+      <p> Faites le point de vos livres lus ou posséder...<p>
       <p>suivez-nous</p>
 
    <nav class="navbar navbar-expand-lg bg-body-tertiary">

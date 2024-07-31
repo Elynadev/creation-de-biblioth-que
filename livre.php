@@ -7,7 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     
     <style>
-
+h1{
+        text-align:center;
+    }
 form{
         display: flex;
         flex-direction: column;
@@ -127,7 +129,7 @@ echo '<h1> Quel livre voulez-vous ajouter ?</h1>
           <td> $array[anné]  </td>
           <td>
                 <form action='modification.php' method='post'> 
-                  <button type='submit' class='btn btn-secondary' data-bs-dismiss='modal'>Modifier</button> 
+                  <button type='submit' class='btn btn-secondary'  value='$array[id]' data-bs-dismiss='modal'>Modifier</button> 
                    </form>
                 <form action='livre.php' method='post'> 
                     <button type='submit' name='delete' value='$array[id]' class='btn btn-danger'>supprimer</button>  
