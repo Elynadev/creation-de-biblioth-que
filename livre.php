@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+
+form{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 30px auto;
+        width: 50%;
+        height: 100%;
+        background-color: white;
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        font-size: 1.2em;
+    }
+    input{
+      margin: 5px 0;
+    }
+    #submit{
+      margin: 10px 0;
+        width: 100px;
+        height: 50px;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.2em;
+    }
     table {
   border-collapse: collapse;
   width: 100%;
@@ -62,21 +89,24 @@ echo '<h1> Quel livre voulez-vous ajouter ?</h1>
         $livre = new livre();
         $livre->insert($titre, $auteur, $annee);
 
-        echo '<script>alert("Le livre a bien été ajouté !")</script><h1>Le livre a bien été ajouté !</h1>';
+        echo '<script>alert("Le livre a bien été ajouté !")</script>';
+    }
 
-        $bibliotheque=$livre->afficherLivre();
 
-        // print_r($bibliotheque);
-        // $suppression =$livre->delete("4");
-        // print_r ($suppression);
-   
+       
+
         
- 
-    
-        foreach($bibliotheque as $livre) {
-    
 
-        echo " <h1>liste livres</h1>
+        echo " <h1>liste des livres</h1>";
+        $livre = new livre();
+        $bibliotheque=$livre->afficherLivre();
+        foreach ($bibliotheque as $array)
+        {
+
+          
+       
+
+        echo " <p> livre N°.$array[id] </p>
         <table>
       <thead>
         <tr>
@@ -88,20 +118,23 @@ echo '<h1> Quel livre voulez-vous ajouter ?</h1>
       </thead>
       <tbody>
         <tr>
-          <td> $titre </td> 
-          <td> $auteur</td>
-          <td>  $annee</td>
-          
+          <td>$array[titre] </td> 
+          <td> $array[auteur] </td>
+          <td> $array[anné]  </td>
+          <td>
+                <button >Modifier</button>
+                 <button>Supprimer</button>
+           </td>
         </tr>
       </tbody>
       </table>";
       
       
-       
     }
+    
 
 
-}
+
 
 ?>
 </body>

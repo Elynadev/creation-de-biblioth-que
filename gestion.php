@@ -28,7 +28,18 @@ public function afficherLivre() {
     $this->sendData($sql,$data);
  }
 
-
+ function getid(){
+    return $this->id;
+}
+function getTitre(){
+    return $this->titre;
+}
+function getAuteur(){
+    return $this->auteur;
+}
+function getannée(){
+    return $this->annee;
+}
 }
 
 

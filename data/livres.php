@@ -34,7 +34,7 @@
         $req = $this->db->prepare($sql);
         $req->execute($data);
         $response = $req->fetchAll(PDO::FETCH_ASSOC);
-        echo "Requête valide!";
+        // echo "Requête valide!";
         return $response;
         } catch (PDOException $th) {
         echo $th->getMessage();

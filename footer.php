@@ -42,8 +42,8 @@
     <footer>
    <ul>
        <li><a href="index.php">Accueil</a></li>
-       <li><a href="livres.php">Livres</a></li>
-       <li><a href="contact.php">Contact</a></li>
+       <li><a href="livre.php">Livres</a></li>
+       <li><a href="livres.php">bibliotheque</a></li>
    </ul>
 
     </footer>

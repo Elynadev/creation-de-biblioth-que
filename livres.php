@@ -24,46 +24,61 @@ th {
 </head>
 </head>
 <body>
-    <?php
-  
+      
+<?php
 require_once('gestion.php');
-require_once('header.php');
-$titre = $_POST['titre'];
-$auteur = $_POST['auteur'];
-$annee = $_POST['annee'];
-     echo " <h1>liste livres</h1>
-  <table>
-<thead>
-  <tr>
-    <th>titre</th>
-    <th>auteur</th>
-    <th>Année</th>
-    
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td> $titre </td> 
-    <td> $auteur</td>
-    <td>  $annee</td>
-    
-  </tr>
-</tbody>
-</table>";
 
 
-  echo "<tr>";
-  echo "<td>id</td>";
-  echo "<td>titre</td>";
-  echo "<td>auteur</td>";
-  echo "<td>annee</td>";
-  echo "</tr>";
+ include ('header.php');
+
+
+
+
+
+   
+
+        $livre = new livre();
+        
+        $bibliotheque=$livre->afficherLivre();
+        echo " <h1>liste des livres</h1>";
+        
+        foreach ($bibliotheque as $array)
+        {
+
+    
+       
+
+        echo " <p> livre N°.$array[id] </p>
+        <table>
+      <thead>
+        <tr>
+          <th>titre</th>
+          <th>auteur</th>
+          <th>Année</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>$array[titre] </td> 
+          <td> $array[auteur] </td>
+          <td> $array[anné]  </td>
+          <td>
+                <button >Modifier</button>
+                 <button>Supprimer</button>
+           </td>
+        </tr>
+      </tbody>
+      </table>";
+      
+      
+    }
+    
+
+
 
 
 ?>
-
- 
-
     
 </body>
 </html>
